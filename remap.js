@@ -10,19 +10,28 @@ var defaultParams = {
     cmap_formats: ['cmap_format_4', 'cmap_format_12'],
     fontMapFileName: 'font_map.js',
     modifiedFontFileSuffix: '_modified',
-    ttx: './fonttools/lib/fontTools/ttx.py'
+    ttx: 'fonttools/lib/fontTools/ttx.py'
 };
 
-var fontFileName = process.argv[0];
+var fontFileName = args[0];
+if(!fontFileName) {
+    console.log('Please supply a valid ttf font file.');
+}
+var outName = args[1];
+if(!outName) {
+    outName = '';
+}
 
 var params = _.extend({}, defaultParams);
-
-console.log(child_process.execSync('python3 '));// + params.ttx));
-return;
+//console.log(__dirname);
+var buf = child_process.spawnSync('python3',  [__dirname + '/' + params.ttx, '-f', fontFileName], { encoding: 'utf8' });
+console.log(buf.stdout);
+console.log('Succesfully created ttx file.');
+fontFileName = fontFileName.substring(0, fontFileName.lastIndexOf('.')) + '.ttx';
 
 var parser = new xml2js.Parser();
 
-fs.readFile('/Users/ciprian/Desktop/RobotoCondensed-Regular.ttx', function(err, data) {
+fs.readFile(fontFileName, function(err, data) {
 	if(data) {
     parser.parseString(data, function (err, result) {
 
@@ -73,9 +82,20 @@ fs.readFile('/Users/ciprian/Desktop/RobotoCondensed-Regular.ttx', function(err, 
         var builder = new xml2js.Builder();
         var xml = builder.buildObject(result);
 
-        fs.writeFile('/Users/ciprian/Desktop/' + params.fontMapFileName, JSON.stringify(mapping));
-        fs.writeFile('/Users/ciprian/Desktop/RobotoCondensed-Regular.modified.ttx', xml);
-        console.log('Done');
+        console.log('Writing font map to ' + outName + params.fontMapFileName + '.');
+        fs.writeFile(params.fontMapFileName, JSON.stringify(mapping));
+        if(!outName && outName.length === 0) {
+            fontFileName = fontFileName.substring(0, fontFileName.lastIndexOf('.')) + params.modifiedFontFileSuffix + '.ttx';
+        } else {
+            fontFileName = outName + '.ttx';
+        }
+
+        console.log('Writing font ttx to ' + fontFileName);
+        fs.writeFileSync(fontFileName, xml);
+
+        buf = child_process.spawnSync('python3',  [__dirname + '/' + params.ttx, fontFileName], { encoding: 'utf8' });
+        console.log(buf.stdout);
+        console.log('Done.');
     });
 }
 });
