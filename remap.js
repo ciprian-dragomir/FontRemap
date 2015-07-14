@@ -83,7 +83,7 @@ fs.readFile(fontFileName, function(err, data) {
         var xml = builder.buildObject(result);
 
         console.log('Writing font map to ' + outName + params.fontMapFileName + '.');
-        fs.writeFile(params.fontMapFileName, JSON.stringify(mapping));
+        fs.writeFile(outName + params.fontMapFileName, JSON.stringify(mapping));
         if(!outName && outName.length === 0) {
             fontFileName = fontFileName.substring(0, fontFileName.lastIndexOf('.')) + params.modifiedFontFileSuffix + '.ttx';
         } else {
