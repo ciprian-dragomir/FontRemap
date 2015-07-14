@@ -1,0 +1,11 @@
+{
+  "name": "font-remap",
+  "version": "1.0.0",
+  "description": "A node based utility which creates a random character mapping for a ttx file. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
