@@ -73,13 +73,6 @@ fs.readFile('/Users/ciprian/Desktop/RobotoCondensed-Regular.ttx', function(err, 
         var builder = new xml2js.Builder();
         var xml = builder.buildObject(result);
 
-
-        //if(_.isArray(cmap)) {
-        //    cmap.forEach(function(mversion) {
-        //
-        //    });
-        //}
-
         fs.writeFile('/Users/ciprian/Desktop/' + params.fontMapFileName, JSON.stringify(mapping));
         fs.writeFile('/Users/ciprian/Desktop/RobotoCondensed-Regular.modified.ttx', xml);
         console.log('Done');
