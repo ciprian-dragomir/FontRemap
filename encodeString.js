@@ -8,11 +8,6 @@ if(args.length < 2) {
 
 var stringToEncode = args[0];
 var fontMapFileName = args[1];
-//fontMapFileName = __dirname + fontMapFileName;
-//if(fontMapFileName.substring(0, 1) != '/' && fontMapFileName.substring(0, 2) != './' &&
-//    fontMapFileName.substring(0, 3) != '../') {
-//
-//}
 
 var fs = require('fs');
 var fontMap = JSON.parse(fs.readFileSync(fontMapFileName, { encoding: 'utf8' }));
