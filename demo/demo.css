@@ -6,5 +6,25 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', serif;
+}
+
+.encoded-text {
     font-family: "Roboto Condensed Modified", serif;
+}
+
+.free-text {
+
+}
+
+.main-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: cornsilk;
+}
+
+.input-container {
+    padding: 4px;
 }

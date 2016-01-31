@@ -30,14 +30,14 @@ if(argv['r']) {
     }
     var dest = null;
     if(argv._.length >= 2) {
-        dest = argv._[1];
+        dest = argv._[2];
     }
 
     FontRemap(argv._[0]).remap({
         src: argv._[0],
         dest: dest,
         map: argv._[0] + '.font-map.json',
-        ttx: __dirname + '/fonttools/lib/fontTools/ttx.py'
+        ttx: __dirname + '/fonttools/Tools/ttx'
     });
 } else {
     const str = argv['s'] || argv._[0],

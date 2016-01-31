@@ -2,42 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>FontRemap Demo</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="demo.css" />
 </head>
 <body>
 
-<p>
-    Some string here should be displayed as gibberish.
-</p>
-<p>
-    &#xfb02;&#x59;&#x41f;&#x1eca;&#x41f;&#x118;&#x1e85;&#x46c;&#x1eca;&#x46c;&#x41f;&#x47f;&#x1e85;&#x2010;&#x45b;&#x1eca;&#x1e85;&#x46c;&#x1eca;&#x3a;&#x1e85;&#x46c;&#x4aa;&#x1eb5;&#x3bf;&#x1e3f;&#x1ec3;&#x3a;&#x1eca;&#x7a;&#x37;&#x47f;&#x47f;&#x1ec3;&#x7a;&#x41f;&#x1eb5;&#x1e3f;&#x509;&#x1eca;&#xb6;&#x47f;&#x1e3f;&#x1eca;&#x7a;&#x37;&#x4aa;&#x1e3f;&#x1eca;&#x4aa;&#x3bf;&#x46c;&#x41f;&#x1e85;&#x2010;&#x45b;&#x509;
-</p>
-<p>
-    &#x1edc;&#x1eb5;&#x1eb5;&#x1eca;&#x46c;&#x4aa;&#x1ec3;&#x7a;&#x1e85;&#x3bf;&#x1eb5;&#x1eca;&#x7a;&#x118;&#x3bf;&#x47f;&#x3bf;&#x7a;&#x41f;&#x1ec3;&#x47f;&#x46c;&#x1eca;&#x46c;&#x118;&#x37;&#x59;&#x1eb5;&#x3a;&#x1eca;&#x1ead;&#x37;&#x47f;&#x5d;&#xa4;&#x1eca;&#x1eca;&#x1ecd;&#x42b;&#x1eca;&#x1ebb;&#x42b;&#x1eca;&#x1ea4;&#x42b;&#x1eca;&#x20a9;&#x42b;&#x1eca;&#x430;&#x42b;&#x1eca;&#x3c8;&#x1eca;&#x468;&#x42b;&#x1eca;&#xa8;&#x42b;&#x1eca;&#x2004;&#x42b;&#x1eca;&#xc0;&#x42b;&#x1eca;&#x1ebd;&#x509;
-</p>
-<p>
-    &#x28;&#x2010;&#x46c;&#x59;&#x4aa;&#x4aa;&#x37;&#x47f;&#x41f;&#x1ec3;&#x3a;&#x1eca;&#x7a;&#x118;&#x3bf;&#x47f;&#x3bf;&#x7a;&#x41f;&#x1ec3;&#x47f;&#x46c;&#x1eca;&#x7a;&#x3bf;&#x2010;&#x1eca;&#x3a;&#x1ec3;&#x20a7;&#x3bf;&#x59;&#x1eb5;&#x41f;&#x1eca;&#x41f;&#x37;&#x1eca;&#x3bf;&#x2010;&#x1e3f;&#x41f;&#x118;&#x1e85;&#x2010;&#x1eca;&#x1ead;&#x1ec3;&#x1eca;&#x3a;&#x1ec3;&#x46c;&#x1e85;&#x47f;&#x1ec3;&#x1eca;&#x12d;&#x1f0;&#x1eca;&#x20a7;&#x37;&#x47f;&#x1eca;&#x1e85;&#x2010;&#x46c;&#x41f;&#x3bf;&#x2010;&#x7a;&#x1ec3;&#x4c3;
-</p>
-<p>
-    &#x1ecd;&#x42b;&#x1eca;&#x4a2;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1ebb;&#x42b;&#x1eca;&#x1ea4;&#x42b;&#x1eca;&#xa8;&#x42b;&#x1eca;&#x2004;&#x42b;&#x1eca;&#x38c;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1eb0;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x458;&#x42b;&#x1eca;&#xc0;&#x42b;&#x1eca;&#x3a5;&#x42b;&#x1eca;&#x20a9;&#x42b;&#x1eca;&#x1ebd;
-</p>
+<div class="main-container">
+    <div class="input-container">
+        <div class="input-wrapper">
+            <input type="text" placeholder="Enter a string">
+            <button>Encipher</button>
+        </div>
+    </div>
 
-<p>
-    &#xbd;&#x42b;&#x1eca;&#x505;&#x42b;&#x1eca;&#x438;&#x42b;&#x1eca;&#x4dd;&#x42b;&#x1eca;&#x161;&#x42b;&#x1eca;&#x444;&#x42b;&#x1eca;&#x4f5;&#x42b;&#x1eca;&#xe7;&#x42b;&#x1eca;&#x11e;&#x42b;&#x1eca;&#x323;&#x42b;&#x1eca;&#x1eb5;&#x157;&#x1eb5;
-</p>
+    <div class="encoded-text"></div>
+    <div class="free-text"></div>
+</div>
 
-<p>
-    &#x445;&#x42b;&#x1eca;&#xbd;&#x42b;&#x1eca;&#xf6c3;&#x42b;&#x1eca;&#x438;&#x42b;&#x1eca;&#x4dd;&#x42b;&#x1eca;&#x3b7;&#x42b;&#x1eca;&#x161;&#x42b;&#x1eca;&#x3ba;&#x42b;&#x1eca;&#xfb;&#x42b;&#x1eca;&#x4f5;&#x42b;&#x1eca;&#xe7;&#x42b;&#x1eca;&#x20ab;&#x42b;&#x1eca;&#x11e;&#x42b;&#x1eca;&#xc1;&#x42b;&#x1eca;&#x471;
-</p>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
 
-<p>
-    &#xb5;&#x1ec3;&#x158;&#x1ec3;&#x47f;&#x45b;&#x1ec3;&#x411;&#x2010;&#x1e85;&#x46c;
-</p>
+</script>
 
-<p>
-    &#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;
-</p>
+<!--<p>-->
+    <!--Some string here should be displayed as gibberish.-->
+<!--</p>-->
+<!--<p>-->
+    <!--&#xfb02;&#x59;&#x41f;&#x1eca;&#x41f;&#x118;&#x1e85;&#x46c;&#x1eca;&#x46c;&#x41f;&#x47f;&#x1e85;&#x2010;&#x45b;&#x1eca;&#x1e85;&#x46c;&#x1eca;&#x3a;&#x1e85;&#x46c;&#x4aa;&#x1eb5;&#x3bf;&#x1e3f;&#x1ec3;&#x3a;&#x1eca;&#x7a;&#x37;&#x47f;&#x47f;&#x1ec3;&#x7a;&#x41f;&#x1eb5;&#x1e3f;&#x509;&#x1eca;&#xb6;&#x47f;&#x1e3f;&#x1eca;&#x7a;&#x37;&#x4aa;&#x1e3f;&#x1eca;&#x4aa;&#x3bf;&#x46c;&#x41f;&#x1e85;&#x2010;&#x45b;&#x509;-->
+<!--</p>-->
+<!--<p>-->
+    <!--&#x1edc;&#x1eb5;&#x1eb5;&#x1eca;&#x46c;&#x4aa;&#x1ec3;&#x7a;&#x1e85;&#x3bf;&#x1eb5;&#x1eca;&#x7a;&#x118;&#x3bf;&#x47f;&#x3bf;&#x7a;&#x41f;&#x1ec3;&#x47f;&#x46c;&#x1eca;&#x46c;&#x118;&#x37;&#x59;&#x1eb5;&#x3a;&#x1eca;&#x1ead;&#x37;&#x47f;&#x5d;&#xa4;&#x1eca;&#x1eca;&#x1ecd;&#x42b;&#x1eca;&#x1ebb;&#x42b;&#x1eca;&#x1ea4;&#x42b;&#x1eca;&#x20a9;&#x42b;&#x1eca;&#x430;&#x42b;&#x1eca;&#x3c8;&#x1eca;&#x468;&#x42b;&#x1eca;&#xa8;&#x42b;&#x1eca;&#x2004;&#x42b;&#x1eca;&#xc0;&#x42b;&#x1eca;&#x1ebd;&#x509;-->
+<!--</p>-->
+<!--<p>-->
+    <!--&#x28;&#x2010;&#x46c;&#x59;&#x4aa;&#x4aa;&#x37;&#x47f;&#x41f;&#x1ec3;&#x3a;&#x1eca;&#x7a;&#x118;&#x3bf;&#x47f;&#x3bf;&#x7a;&#x41f;&#x1ec3;&#x47f;&#x46c;&#x1eca;&#x7a;&#x3bf;&#x2010;&#x1eca;&#x3a;&#x1ec3;&#x20a7;&#x3bf;&#x59;&#x1eb5;&#x41f;&#x1eca;&#x41f;&#x37;&#x1eca;&#x3bf;&#x2010;&#x1e3f;&#x41f;&#x118;&#x1e85;&#x2010;&#x1eca;&#x1ead;&#x1ec3;&#x1eca;&#x3a;&#x1ec3;&#x46c;&#x1e85;&#x47f;&#x1ec3;&#x1eca;&#x12d;&#x1f0;&#x1eca;&#x20a7;&#x37;&#x47f;&#x1eca;&#x1e85;&#x2010;&#x46c;&#x41f;&#x3bf;&#x2010;&#x7a;&#x1ec3;&#x4c3;-->
+<!--</p>-->
+<!--<p>-->
+    <!--&#x1ecd;&#x42b;&#x1eca;&#x4a2;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1ebb;&#x42b;&#x1eca;&#x1ea4;&#x42b;&#x1eca;&#xa8;&#x42b;&#x1eca;&#x2004;&#x42b;&#x1eca;&#x38c;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x1eb0;&#x42b;&#x1eca;&#x1f0;&#x42b;&#x1eca;&#x458;&#x42b;&#x1eca;&#xc0;&#x42b;&#x1eca;&#x3a5;&#x42b;&#x1eca;&#x20a9;&#x42b;&#x1eca;&#x1ebd;-->
+<!--</p>-->
+
+<!--<p>-->
+    <!--&#xbd;&#x42b;&#x1eca;&#x505;&#x42b;&#x1eca;&#x438;&#x42b;&#x1eca;&#x4dd;&#x42b;&#x1eca;&#x161;&#x42b;&#x1eca;&#x444;&#x42b;&#x1eca;&#x4f5;&#x42b;&#x1eca;&#xe7;&#x42b;&#x1eca;&#x11e;&#x42b;&#x1eca;&#x323;&#x42b;&#x1eca;&#x1eb5;&#x157;&#x1eb5;-->
+<!--</p>-->
+
+<!--<p>-->
+    <!--&#x445;&#x42b;&#x1eca;&#xbd;&#x42b;&#x1eca;&#xf6c3;&#x42b;&#x1eca;&#x438;&#x42b;&#x1eca;&#x4dd;&#x42b;&#x1eca;&#x3b7;&#x42b;&#x1eca;&#x161;&#x42b;&#x1eca;&#x3ba;&#x42b;&#x1eca;&#xfb;&#x42b;&#x1eca;&#x4f5;&#x42b;&#x1eca;&#xe7;&#x42b;&#x1eca;&#x20ab;&#x42b;&#x1eca;&#x11e;&#x42b;&#x1eca;&#xc1;&#x42b;&#x1eca;&#x471;-->
+<!--</p>-->
+
+<!--<p>-->
+    <!--&#xb5;&#x1ec3;&#x158;&#x1ec3;&#x47f;&#x45b;&#x1ec3;&#x411;&#x2010;&#x1e85;&#x46c;-->
+<!--</p>-->
+
+<!--<p>-->
+    <!--&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;&#x1f0;-->
+<!--</p>-->
 
 </body>
 </html>
