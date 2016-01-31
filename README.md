@@ -7,6 +7,17 @@ A simple font utility which facilitates the creation of auxiliary font files by 
 git clone https://github.com/ciprian-dragomir/FontRemap.git
 ```
 
+Then cd to the project directory
+
+```bash
+cd FontMap
+```
+and install npm package dependencies:
+
+```bash
+npm install
+```
+
 ##Usage
 
 ```bash
@@ -15,7 +26,7 @@ node font-remap [options]
 
 Typically, you would use font-remap in the following way:
 
-1. Generate a new font file based on a random mapping (the mapping is also produced and saved):
+1. Generate a new font file with a random character to glyph mapping (the mapping is also produced and saved):
 
 ```bash
 node font-remap -r <original_font.ttf>
@@ -26,3 +37,11 @@ node font-remap -r <original_font.ttf>
 ```bash
 node font-remap -s 'String to encode' -m <font-map.json>
 ```
+
+##Dependecies
+FontRemap uses [fonttools](https://github.com/behdad/fonttools), a tool written in python which extracts character tables from font files into more manageable xml files (.ttx extension), but is also able to reconstruct a true type font from the xml representation. FontRemap uses the xml structured document as an intermediate format.
+
+##Notes
+Due to its reliance on fonttools, FontRemap inherits all its limitations. 
+Additionally, the FontRemap only works with font files which include cmap type 4 or 12 tables. 
+
