@@ -12,7 +12,7 @@
     <div class="input-container">
         <div class="input-wrapper">
             <input type="text" placeholder="Enter a string">
-            <button>Encipher</button>
+            <button id="encipherBt">Encipher</button>
         </div>
     </div>
 
@@ -21,8 +21,40 @@
 </div>
 
 <script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="font_map.js"></script>
 <script type="text/javascript">
+    (function() {
+        var stringEncode = function(stringToEncode) {
+            var res = [];
+            for(var i = 0; i < stringToEncode.length; ++i) {
+                var c = '0x' + stringToEncode.charCodeAt(i).toString(16);
+                var replaceWith = FONT_MAP[c];
+                if(replaceWith) {
+                    c = replaceWith;
+                } else {
+                    c = fontMap['0x' + '_'.charCodeAt(0).toString(16)];
+                }
 
+                c = c.replace(/^0/, '&#') + ';';
+
+                res.push(c);
+            }
+
+            return res.join('');
+        };
+
+        var setup = function() {
+            var mainContainer = $('.main-container');
+            $('#encipherBt').click(function(ev) {
+                var input = $('input', $(ev.target).parent());
+                var str = stringEncode(input.val());
+                $('.encoded-text, .free-text', mainContainer)
+                        .append($('<p>').html(str));
+            });
+        };
+
+        $(document).ready(setup);
+    })();
 </script>
 
 <!--<p>-->

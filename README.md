@@ -18,6 +18,12 @@ and install npm package dependencies:
 npm install
 ```
 
+Finally, clone [fonttools](https://github.com/behdad/fonttools) utility:
+
+```bash
+git clone https://github.com/behdad/fonttools.git
+```
+
 ##Usage
 
 ```bash
