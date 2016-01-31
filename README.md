@@ -3,21 +3,26 @@ A simple font utility which facilitates the creation of auxiliary font files by 
 
 ##Installation
 
+```bash
 git clone https://github.com/ciprian-dragomir/FontRemap.git
+```
 
 ##Usage
 
+```bash
 node font-remap [options]
+```
 
 Typically, you would use font-remap in the following way:
+
 1. Generate a new font file based on a random mapping (the mapping is also produced and saved):
 
-````javascript
+```bash
 node font-remap -r <original_font.ttf>
-````
+```
 
 2. Use the created font-mapping to encode strings whose character representation is to be concealed:
 
-````javascript
+```bash
 node font-remap -s 'String to encode' -m <font-map.json>
-````
+```
