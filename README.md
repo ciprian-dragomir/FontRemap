@@ -40,8 +40,9 @@ node font-remap -s 'String to encode' -m <font-map.json>
 
 ##Dependecies
 FontRemap uses [fonttools](https://github.com/behdad/fonttools), a tool written in python which extracts character tables from font files into more manageable xml files (.ttx extension), but is also able to reconstruct a true type font from the xml representation. FontRemap uses the xml structured document as an intermediate format.
+The fonttools package also requires python3 to run.
 
 ##Notes
 Due to its reliance on fonttools, FontRemap inherits all its limitations. 
-Additionally, the FontRemap only works with font files which include cmap type 4 or 12 tables. 
+Additionally, the FontRemap only works with font files which include cmap type 4 or 12 tables at this time.
 
