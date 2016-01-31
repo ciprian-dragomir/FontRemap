@@ -12,8 +12,12 @@ node font-remap [options]
 Typically, you would use font-remap in the following way:
 1. Generate a new font file based on a random mapping (the mapping is also produced and saved):
 
+````javascript
 node font-remap -r <original_font.ttf>
+````
 
 2. Use the created font-mapping to encode strings whose character representation is to be concealed:
 
+````javascript
 node font-remap -s 'String to encode' -m <font-map.json>
+````
