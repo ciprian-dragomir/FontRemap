@@ -43,5 +43,5 @@ FontRemap uses [fonttools](https://github.com/behdad/fonttools), a tool written 
 
 ##Notes
 Due to its reliance on fonttools, FontRemap inherits all its limitations. 
-Additionally, the FontRemap only works with font files which include cmap type 4 or 12 tables. 
+Additionally, the FontRemap only works with font files which include cmap type 4 or 12 tables at this time.
 
