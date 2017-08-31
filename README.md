@@ -1,10 +1,10 @@
 # FontRemap
 A simple font utility which facilitates the creation of auxiliary font files by re-mapping character codes to arbitrary glyphs. Pertinent strings can then be ‘enciphered’ such that they are only legible under the generated font and vacuous otherwise. This technique can be employed, for instance, to prohibit copying displayed text onto the clipboard.
 
-##Demo
+## Demo
 The string encipherment using a re-mapped font file is demonstrated [here](http://teluric.uk/projects/FontRemap).
 
-##Installation
+## Installation
 
 ```bash
 git clone https://github.com/ciprian-dragomir/FontRemap.git
@@ -27,7 +27,7 @@ Finally, clone [fonttools](https://github.com/behdad/fonttools) utility:
 git clone https://github.com/behdad/fonttools.git
 ```
 
-##Usage
+## Usage
 
 ```bash
 node font-remap [options]
@@ -47,11 +47,11 @@ node font-remap -r <original_font.ttf>
 node font-remap -s 'String to encode' -m <font-map.json>
 ```
 
-##Dependecies
+## Dependecies
 FontRemap uses [fonttools](https://github.com/behdad/fonttools), a tool written in python which extracts character tables from font files into more manageable xml files (.ttx extension), but is also able to reconstruct a true type font from the xml representation. FontRemap uses the xml structured document as an intermediate format.
 The fonttools package also requires python3 to run.
 
-##Notes
+## Notes
 Due to its reliance on fonttools, FontRemap inherits all its limitations. 
 Additionally, the FontRemap only works with font files which include cmap type 4 or 12 tables at this time.
 
